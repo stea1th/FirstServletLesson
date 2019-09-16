@@ -1,7 +1,5 @@
 package dao;
 
-import javax.enterprise.inject.Any;
-
 @StudentAnnotation
 public class Student implements Person {
     private String name;

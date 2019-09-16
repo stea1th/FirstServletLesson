@@ -22,7 +22,6 @@ public class DependencyInjectionExample extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         person.setName("Vadim");
         resp.getWriter().write(person.getName());
-//        System.out.println(student.getName());
         System.out.println("Hallo!!!!");
 
     }
