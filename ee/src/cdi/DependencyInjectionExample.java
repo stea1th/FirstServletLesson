@@ -1,7 +1,7 @@
 package cdi;
 
 import dao.Person;
-import dao.Student;
+import dao.StudentAnnotation;
 
 import javax.inject.Inject;
 import javax.servlet.ServletException;
@@ -15,6 +15,7 @@ import java.io.IOException;
 public class DependencyInjectionExample extends HttpServlet {
 
     @Inject
+//    @StudentAnnotation
     Person person;
 
     @Override
