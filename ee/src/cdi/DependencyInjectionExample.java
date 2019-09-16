@@ -1,5 +1,6 @@
 package cdi;
 
+import dao.Person;
 import dao.Student;
 
 import javax.inject.Inject;
@@ -14,12 +15,12 @@ import java.io.IOException;
 public class DependencyInjectionExample extends HttpServlet {
 
     @Inject
-    Student student;
+    Person person;
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        student.setName("Vadim");
-        resp.getWriter().write(student.getName());
+        person.setName("Vadim");
+        resp.getWriter().write(person.getName());
 //        System.out.println(student.getName());
         System.out.println("Hallo!!!!");
 
