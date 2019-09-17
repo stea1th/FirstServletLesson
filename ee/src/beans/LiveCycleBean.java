@@ -1,29 +1,11 @@
 package beans;
 
-import javax.annotation.PostConstruct;
-import javax.annotation.PreDestroy;
 import javax.enterprise.context.RequestScoped;
-import javax.interceptor.AroundInvoke;
-import javax.interceptor.InvocationContext;
+import javax.interceptor.Interceptors;
 
 @RequestScoped
+@Interceptors(interceptor.Interceptor.class)
 public class LiveCycleBean {
-
-    @PostConstruct
-    private void postConstruct() {
-        System.out.println("Post counstruct");
-    }
-
-    @AroundInvoke
-    private Object aroundMethods(InvocationContext context) throws Exception {
-        System.out.println("Beforre method");
-        return context.proceed();
-    }
-
-    @PreDestroy
-    private void preDestroy() {
-        System.out.println("Destroy live cycle bean");
-    }
 
     public LiveCycleBean() {
         System.out.println("Construct");
