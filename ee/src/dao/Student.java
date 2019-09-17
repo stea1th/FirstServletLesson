@@ -1,6 +1,9 @@
 package dao;
 
-@StudentAnnotation
+import javax.enterprise.inject.Alternative;
+
+//@StudentAnnotation
+@Alternative
 public class Student implements Person {
     private String name;
 
