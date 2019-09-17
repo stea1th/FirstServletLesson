@@ -1,7 +1,6 @@
 package cdi;
 
-import dao.Person;
-import dao.StudentAnnotation;
+import interfaces.Person;
 
 import javax.inject.Inject;
 import javax.servlet.ServletException;

@@ -1,5 +1,7 @@
 package dao;
 
+import interfaces.Person;
+
 import javax.enterprise.inject.Default;
 
 @Default
