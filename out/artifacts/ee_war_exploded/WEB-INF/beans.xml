@@ -8,4 +8,9 @@
     <alternatives>
         <class>dao.Student</class>
     </alternatives>
+    <interceptors>
+        <class>interceptor.InterceptorOne</class>
+        <class>interceptor.InterceptorTwo</class>
+        <class>interceptor.InterceptorThree</class>
+    </interceptors>
 </beans>

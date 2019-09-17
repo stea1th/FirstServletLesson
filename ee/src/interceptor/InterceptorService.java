@@ -2,7 +2,7 @@ package interceptor;
 
 import javax.interceptor.Interceptors;
 
-@Interceptors({InterceptorOne.class, InterceptorTwo.class, InterceptorThree.class})
+@One
 public class InterceptorService {
 
     public void doJob(){
