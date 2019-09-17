@@ -1,6 +1,7 @@
 package dao;
 
 import javax.enterprise.inject.Default;
+import javax.enterprise.inject.Disposes;
 import javax.enterprise.inject.Produces;
 
 public class Producer {
@@ -24,5 +25,9 @@ public class Producer {
     @Produces
     Car getCar() {
         return new Car("Lada");
+    }
+
+    public void clean(@Disposes Car car) {
+        car.clean();
     }
 }

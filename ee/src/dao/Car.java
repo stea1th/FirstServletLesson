@@ -10,4 +10,8 @@ public class Car {
     public String getName() {
         return name;
     }
+
+    public void clean() {
+        System.out.println("Car clean");
+    }
 }
