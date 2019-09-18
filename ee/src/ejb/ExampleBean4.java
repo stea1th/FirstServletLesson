@@ -1,7 +1,6 @@
 package ejb;
 
 import dao.Car;
-import service.MyWebService;
 
 import javax.annotation.Resource;
 import javax.ejb.EJB;
@@ -13,7 +12,6 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.PersistenceContext;
 import javax.persistence.PersistenceUnit;
 import javax.transaction.UserTransaction;
-import javax.xml.ws.WebServiceRef;
 
 @Singleton
 public class ExampleBean4 {
@@ -36,8 +34,8 @@ public class ExampleBean4 {
     @Resource
     SessionContext context;
 
-    @WebServiceRef
-    MyWebService myWebService;
+//    @WebServiceRef
+//    MyWebService myWebService;
 
     public String getName() {
         return "Max";
