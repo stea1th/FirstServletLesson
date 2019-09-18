@@ -9,9 +9,8 @@ import java.util.concurrent.TimeUnit;
 
 //@Stateful
 //@StatefulTimeout(unit = TimeUnit.SECONDS, value = 10)
-//@Singleton
-@Stateful
-@RequestScoped
+@Singleton
+//@Stateless
 public class StatefulExample {
     private int i;
 
