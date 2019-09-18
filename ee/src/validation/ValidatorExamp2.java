@@ -22,6 +22,8 @@ public class ValidatorExamp2 extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         Set<ConstraintViolation<Man>> set = validator.validateValue(Man.class, "email", "email@mail.ru");
+        Set<ConstraintViolation<Man>> set2 = validator.validateValue(Man.class, "site", "https://tts.lt");
         set.forEach(i-> System.out.println(i.getMessage() + " -> " + i.getInvalidValue()));
+        set2.forEach(i-> System.out.println(i.getMessage() + " -> " + i.getInvalidValue()));
     }
 }
