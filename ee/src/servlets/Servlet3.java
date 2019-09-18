@@ -1,8 +1,7 @@
 package servlets;
 
 import ejb.ExampleBean;
-import ejb.StatefulExample;
-import ejb.TempEjb;
+import ejb.ExampleBean2;
 import ejb.interfaces.LocalExampleInterface;
 
 import javax.ejb.EJB;
@@ -13,22 +12,15 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-@WebServlet("/ejb3")
-public class Servlet2 extends HttpServlet {
+@WebServlet("/ejb4")
+public class Servlet3 extends HttpServlet {
+
 
     @EJB
-    ExampleBean exampleBean;
-
-    @EJB
-    LocalExampleInterface localExampleInterface;
-
-
-
+    ExampleBean2 exampleBean2;
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        resp.getWriter().write(localExampleInterface.getName());
-        resp.getWriter().write(exampleBean.getSurname());
 
     }
 }
