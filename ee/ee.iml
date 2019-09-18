@@ -21,6 +21,17 @@
         </ejbRoots>
       </configuration>
     </facet>
+    <facet type="jpa" name="JPA">
+      <configuration>
+        <setting name="validation-enabled" value="true" />
+        <setting name="provider-name" value="Hibernate" />
+        <datasource-mapping>
+          <factory-entry name="persistenceUnitName" value="db9f3fcd-df1b-449e-833b-8ba4fb06547e" />
+        </datasource-mapping>
+        <naming-strategy-map />
+        <deploymentDescriptor name="persistence.xml" url="file://$MODULE_DIR$/web/WEB-INF/persistence.xml" />
+      </configuration>
+    </facet>
   </component>
   <component name="NewModuleRootManager" inherit-compiler-output="true">
     <exclude-output />
@@ -32,5 +43,7 @@
     <orderEntry type="library" name="modules" level="project" />
     <orderEntry type="library" name="modules" level="project" />
     <orderEntry type="library" name="Java EE 6-Java EE 6" level="project" />
+    <orderEntry type="library" name="modules" level="project" />
+    <orderEntry type="library" name="modules" level="project" />
   </component>
 </module>
