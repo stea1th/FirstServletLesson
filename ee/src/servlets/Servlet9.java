@@ -1,7 +1,9 @@
 package servlets;
 
 import dao.Book;
+import ejb.BookBean;
 import ejb.ExampleBean7;
+import ejb.interfaces.BookInterface;
 
 import javax.annotation.Resource;
 import javax.ejb.EJB;
@@ -16,15 +18,19 @@ import java.io.IOException;
 @WebServlet("/ejb10")
 public class Servlet9 extends HttpServlet {
 
-    @Resource
-    EntityManager entityManager;
+    @EJB
+    BookInterface bookInterface;
+
+//    @EJB
+//    BookBean bookBean;
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         Book book = new Book();
         book.setTitle("Makarena");
         book.setPreis(12.90);
-        entityManager.persist(book);
+        bookInterface.save(book);
+//        bookBean.save(book);
 
     }
 }

@@ -26,8 +26,8 @@ public class Interceptor {
         return context.proceed();
     }
 
-    @PreDestroy
-    private void preDestroy() {
-        System.out.println("Destroy live cycle bean");
-    }
+//    @PreDestroy
+//    private void preDestroy() {
+//        System.out.println("Destroy live cycle bean");
+//    }
 }

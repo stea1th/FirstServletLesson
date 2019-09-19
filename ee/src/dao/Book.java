@@ -1,15 +1,17 @@
 package dao;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
 @Table(name = "book")
 public class Book {
+    public static final int START_SEQ = 10;
 
     @Id
+    @SequenceGenerator(name = "global_seq", sequenceName = "global_seq",
+            allocationSize = 1, initialValue = START_SEQ)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE,
+            generator = "global_seq")
     @Column(name = "id")
     private int id;
 
