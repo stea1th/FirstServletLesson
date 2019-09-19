@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence xmlns="http://java.sun.com/xml/ns/persistence" version="2.0">
+    <persistence-unit name="persistenceUnitName" transaction-type="JTA">
+<!--        <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>-->
+        <jta-data-source>jdbc/postgres</jta-data-source>
+        <exclude-unlisted-classes>false</exclude-unlisted-classes>
+
+<!--        <properties>-->
+<!--            <property name="javax.persistence.jdbc.driver" value="org.postgresql.Driver" /> &lt;!&ndash; DB Driver &ndash;&gt;-->
+<!--            <property name="javax.persistence.jdbc.url" value="jdbc:postgresql://localhost:5432/firstservletlesson" /> &lt;!&ndash; BD Mane &ndash;&gt;-->
+<!--            <property name="javax.persistence.jdbc.user" value="user" /> &lt;!&ndash; DB User &ndash;&gt;-->
+<!--            <property name="javax.persistence.jdbc.password" value="password" /> &lt;!&ndash; DB Password &ndash;&gt;-->
+
+<!--            <property name="hibernate.dialect" value="org.hibernate.dialect.PostgreSQL95Dialect"/> &lt;!&ndash; DB Dialect &ndash;&gt;-->
+<!--            <property name="hibernate.hbm2ddl.auto" value="update" /> &lt;!&ndash; create / create-drop / update &ndash;&gt;-->
+
+<!--            <property name="hibernate.show_sql" value="true" /> &lt;!&ndash; Show SQL in console &ndash;&gt;-->
+<!--            <property name="hibernate.format_sql" value="true" /> &lt;!&ndash; Show SQL formatted &ndash;&gt;-->
+<!--        </properties>-->
+
+    </persistence-unit>
+
+</persistence>
