@@ -1,14 +1,11 @@
-package servlets;
+package jta;
 
 import dao.Book;
-import ejb.BookBean;
-import ejb.ExampleBean7;
-import ejb.interfaces.Book1;
+import ejb.BookBean2;
+import ejb.interfaces.Book2;
 import ejb.interfaces.BookInterface;
 
-import javax.annotation.Resource;
 import javax.ejb.EJB;
-import javax.persistence.EntityManager;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -16,23 +13,23 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-@WebServlet("/ejb10")
-public class Servlet9 extends HttpServlet {
-
-    @EJB
-    @Book1
-    BookInterface bookInterface;
+@WebServlet("/manager2")
+public class BeanManagedServlet2 extends HttpServlet {
 
 //    @EJB
-//    BookBean bookBean;
+//    @Book2
+//    BookInterface bookInterface;
+//
+    @EJB
+    BookBean2 bookBean2;
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         Book book = new Book();
-        book.setTitle("Makarena");
-        book.setPreis(12.90);
-        bookInterface.save(book);
-//        bookBean.save(book);
+        book.setTitle("This new Book");
+        book.setPreis(9.99);
+        bookBean2.save(book);
+        resp.getWriter().write("Book " + book.getTitle() + " with id: " + book.getId() + " was saved successful");
 
     }
 }

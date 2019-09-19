@@ -1,4 +1,4 @@
-package ejb;
+package beans;
 
 import dao.Book;
 import ejb.interfaces.Book1;
@@ -8,24 +8,20 @@ import javax.annotation.Resource;
 import javax.ejb.Local;
 import javax.ejb.SessionContext;
 import javax.ejb.Singleton;
+import javax.enterprise.context.RequestScoped;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.transaction.Transactional;
 
-@Singleton
-@Book1
-@Local
-public class BookBean implements BookInterface {
+@Transactional
+@RequestScoped
+public class BookDb implements BookInterface {
 
     @PersistenceContext
     EntityManager entityManager;
 
-    @Resource
-    SessionContext sessionContext;
-
     @Override
     public void save(Book book) {
         entityManager.persist(book);
-        sessionContext.setRollbackOnly();
-
     }
 }

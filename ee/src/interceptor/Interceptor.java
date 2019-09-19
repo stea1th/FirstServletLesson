@@ -15,9 +15,13 @@ public class Interceptor {
     }
 
     @PostConstruct
-    private void postConstruct(InvocationContext invocationContext) throws Exception {
+    private void postConstruct(InvocationContext invocationContext) {
         System.out.println("Post counstruct");
-        invocationContext.proceed();
+        try {
+            invocationContext.proceed();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     @AroundInvoke
@@ -26,8 +30,8 @@ public class Interceptor {
         return context.proceed();
     }
 
-//    @PreDestroy
-//    private void preDestroy() {
-//        System.out.println("Destroy live cycle bean");
-//    }
+    @PreDestroy
+    private void preDestroy(InvocationContext context) {
+        System.out.println("Destroy live cycle bean");
+    }
 }
